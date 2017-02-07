@@ -9,6 +9,14 @@
        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<context:component-scan base-package="first"></context:component-scan>
+	
+	<mvc:annotation-driven>
+		<mvc:argument-resolvers>
+			<bean class="first.common.resolver.CustomMapArgumentResolver"/>
+		</mvc:argument-resolvers>
+	</mvc:annotation-driven>
+	
+	
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
