@@ -22,7 +22,7 @@ public class SampleController {
     @Resource(name="sampleService")
     private SampleService sampleService;
      
-    @RequestMapping(value="/sample/openSampleBoardList.do")
+    @RequestMapping(value="/sample/openBoardList.do")
     public ModelAndView openSampleBoardList(Map<String, Object> commandMap) throws Exception{
         ModelAndView mv = new ModelAndView("/sample/boardList");
          
@@ -46,7 +46,35 @@ public class SampleController {
         }
         return mv;
     }
+    
+    @RequestMapping(value="/sample/openBoardWrite.do")
+    public ModelAndView openBoardWrite(CommandMap commandMap) {
+    	ModelAndView mv = new ModelAndView("/sample/boardWrite");
+    	return mv;
+    }
 
+    @RequestMapping(value="/sample/insertBoard.do")
+	public ModelAndView insertBoard(CommandMap commandMap) throws Exception{
+		ModelAndView mv = new ModelAndView("redirect:/sample/openBoardList.do");
+		
+		sampleService.insertBoard(commandMap.getMap());
+		
+		return mv;
+	}
+
+    @RequestMapping(value="/sample/openBoardDetail.do")
+    public ModelAndView openBoardDetail(CommandMap commandMap) throws Exception{
+        ModelAndView mv = new ModelAndView("/sample/boardDetail");
+         
+        Map<String,Object> map = sampleService.selectBoardDetail(commandMap.getMap());
+        mv.addObject("map", map);
+         
+        return mv;
+    }
+
+
+
+    
 
 }
 

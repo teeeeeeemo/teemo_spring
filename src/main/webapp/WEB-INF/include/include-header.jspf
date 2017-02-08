@@ -1,0 +1,21 @@
+<!--  화면 상단에 포함이 되어야 할 리소스 
+	화면의 메타정보, 스타일 시트 및 화면 호출이 완료되기 전에 가져와야 하는 스크립트 등  -->
+
+<%@ page pageEncoding="utf-8"%>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>teemo</title>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<link rel="stylesheet" type="text/css" href="<c:url value='/css/ui.css'/>" />
+
+<!--  jQuery  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="<c:url value='/js/common.js'/>" charset="utf-8"></script>
+
+
+
+

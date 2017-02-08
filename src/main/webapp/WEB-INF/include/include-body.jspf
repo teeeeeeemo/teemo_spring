@@ -1,0 +1,5 @@
+<!--  화면 하단에 포함될 리소스가 선언  
+	화면의 하단에 공통적으로 사용할 태그나 조금 늦게 호출될 자바 스크립트 등 -->
+	
+<%@ page pageEncoding="utf-8" %>
+<form id="commonForm" name="commonForm"></form>
