@@ -29,6 +29,17 @@ public class SampleDAO extends AbstractDAO{
         return (Map<String, Object>) selectOne("sample.selectBoardDetail", map);
     }
 
+	public void updateBoard(Map<String, Object> map) throws Exception {
+		update("sample.updateBoard", map);
+	}
+
+	public void deleteBoard(Map<String, Object> map) throws Exception {
+		update("sample.deleteBoard", map);
+	}
+
+	public void insertFile(Map<String, Object> map) throws Exception{
+		insert("sample.insertFile", map);
+	}
 
 	
 }
